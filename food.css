@@ -1,92 +1,162 @@
- * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fce4ec;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      padding: 1rem;
-    }
-
-    .popup {
-      width: 100%;
-      max-width: 500px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .popup h2 {
-      font-size: clamp(1.3rem, 4vw, 1.8rem);
-      font-weight: 700;
-      color: #333;
-    }
-
-    .popup p {
-      font-size: clamp(0.9rem, 3vw, 1rem);
-      color: #555;
-    }
-
-    .options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-    }
-
-    .option {
-      background: #fafafa;
-      border: 2px solid transparent;
-      border-radius: 15px;
-      padding: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .option:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-
-    .option img {
-      width: clamp(40px, 20%, 60px);
-      height: auto;
-    }
-a{
-text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-    .option span {
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      font-weight: 600;
-      color: #333;
-    }
 
-    .option.active {
-      border-color: #ff758c;
-      background: #fff0f5;
-    }
+html {
+  font-size: clamp(14px, 1vw + 10px, 20px);
+}
 
-    /* Responsive tweaks */
-    @media (max-width: 480px) {
-      .popup {
-        padding: 1.5rem 1rem;
-        border-radius: 16px;
-      }
-      .options {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+body {
+  min-height: 100vh;
+  min-height: 100dvh; /* fixes mobile browser chrome resize jump */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fce4ec;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: clamp(10px, 4vw, 24px);
+}
+
+.popup {
+  width: 100%;
+  max-width: min(500px, 92vw);
+  background: #fff;
+  border-radius: clamp(14px, 3vw, 20px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: clamp(1.25rem, 5vw, 2rem) clamp(1rem, 4vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.popup h2 {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 700;
+  color: #333;
+}
+
+.popup p {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  color: #555;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(90px, 28vw, 120px), 1fr));
+  gap: clamp(0.6rem, 2.5vw, 1rem);
+}
+
+.option {
+  background: #fafafa;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: clamp(0.7rem, 3vw, 1rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.option img {
+  width: clamp(36px, 18vw, 60px);
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.option span {
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  font-weight: 600;
+  color: #333;
+}
+
+.option.active {
+  border-color: #ff758c;
+  background: #fff0f5;
+}
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+  .popup {
+    padding: 1.1rem 0.75rem;
+    border-radius: 14px;
+    gap: 0.75rem;
+  }
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .option {
+    padding: 0.6rem;
+  }
+}
+
+/* Standard mobile */
+@media (max-width: 480px) {
+  .popup {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 900px) {
+  .popup {
+    max-width: 480px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .popup {
+    max-width: 560px;
+  }
+}
+
+/* TVs / very large screens */
+@media (min-width: 1600px) {
+  html {
+    font-size: clamp(20px, 0.9vw + 12px, 30px);
+  }
+  .popup {
+    max-width: 680px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .option img {
+    width: 64px;
+  }
+}
+
+@media (min-width: 2400px) {
+  .popup {
+    max-width: 800px;
+  }
+}
+
+/* Short/landscape phones */
+@media (max-height: 480px) {
+  body {
+    padding: 10px;
+  }
+  .popup {
+    gap: 0.6rem;
+    padding: 1rem;
+  }
+}
