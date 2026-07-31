@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date Agreement Payment</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fce4ec;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding: 1rem;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      font-weight: 700;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .card p {
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      font-weight: 600;
+      color: #333;
+      margin-top: 0.5rem;
+    }
+
+    .note {
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      color: #777;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .buttons a:hover {
+      transform: translateY(-2px);
+    }
+
+    .pay {
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      color: white;
+    }
+
+    .back {
+      background: #eee;
+      color: #333;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+      }
+      .card h2 {
+        font-size: 1.3rem;
+      }
+      .card p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>one small fee</h2>
+    <p>to confirm your acceptance of this date, please complete the following transaction. totally normal. everyone does this.</p>
+    
+    <div class="price">Date Agreement™ $499</div>
+    <div class="note">one-time fee • non-refundable • absolutely worth it</div>
+
+    <div class="buttons">
+      <a href="#" class="pay">pay $499 & confirm ✨</a>
+<a href="#" class="back" onclick="window.close(); return false;">go back</a>
+
+    </div>
+  </div>
+</body>
+</html>
